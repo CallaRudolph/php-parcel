@@ -49,7 +49,8 @@
         <p>The height entered was: " . $my_parcel->getHeight() . " inches</p>
         <p>The length entered was: " . $my_parcel->getLength() . " inches</p>
         <p>The width entered was: " . $my_parcel->getWidth() . " inches</p><br>
-        <h3>The volume is: " . $my_parcel->getVolume() . " inches!</h3>";
+        <h3>The volume is: " . $my_parcel->getVolume() . " inches!</h3>
+        <h2>Kindly pay us: $" . $my_parcel->costToShip() . " (we are broke)</h3>";
     });
     return $app;
 

@@ -58,6 +58,11 @@
         {
             return $this->height * $this->length * $this->width;
         }
+
+        function costToShip()
+        {
+            return $this->weight * $this->length + 20;
+        }
     }
 
 
