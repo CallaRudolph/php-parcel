@@ -19,19 +19,19 @@
                 <p>Enter the dimensions of your package to see the specs:</p>
                 <form action='/view_parcel'>
                     <div class='form-group'>
-                        <label for='weight'>Enter the weight:</label>
+                        <label for='weight'>Enter the weight (lbs.):</label>
                         <input id='weight' name='weight' class='form-control' type='number'>
                     </div>
                     <div class='form-group'>
-                        <label for='height'>Enter the height:</label>
+                        <label for='height'>Enter the height (inches):</label>
                         <input id='height' name='height' class='form-control' type='number'>
                     </div>
                     <div class='form-group'>
-                        <label for='length'>Enter the length:</label>
+                        <label for='length'>Enter the length (inches):</label>
                         <input id='length' name='length' class='form-control' type='number'>
                     </div>
                     <div class='form-group'>
-                        <label for='width'>Enter the width:</label>
+                        <label for='width'>Enter the width (inches):</label>
                         <input id='width' name='width' class='form-control' type='number'>
                     </div>
                     <button type='submit' class='btn-danger'>Check it</button>
@@ -44,11 +44,12 @@
 
     $app->get("/view_parcel", function() {
         $my_parcel = new Parcel($_GET['weight'], $_GET['height'], $_GET['length'], $_GET['width']);
-        return "<h2>Your info:</h2>
+        return "<h2>Your package info:</h2>
         <p>The weight entered was: " . $my_parcel->getWeight() . " lbs.</p>
         <p>The height entered was: " . $my_parcel->getHeight() . " inches</p>
         <p>The length entered was: " . $my_parcel->getLength() . " inches</p>
-        <p>The width entered was: " . $my_parcel->getWidth() . " inches</p>";
+        <p>The width entered was: " . $my_parcel->getWidth() . " inches</p><br>
+        <h3>The volume is: " . $my_parcel->getVolume() . " inches!</h3>";
     });
     return $app;
 

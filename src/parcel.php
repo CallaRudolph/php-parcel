@@ -53,6 +53,11 @@
         {
             return $this->width;
         }
+
+        function getVolume()
+        {
+            return $this->height * $this->length * $this->width;
+        }
     }
 
 
